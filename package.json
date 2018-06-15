@@ -9,6 +9,7 @@
     "test": "cross-env NODE_ENV=test nyc mocha",
     "watch:test": "mocha --watch",
     "lint": "eslint src",
+    "coverage": "cat ./coverage/lcov.info | codecov",
     "validate": "npm-run-all --parallel lint test build"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "babel-register": "6.26.0",
     "chai": "4.1.2",
     "clean-webpack-plugin": "0.1.19",
+    "codecov": "3.0.2",
     "cross-env": "5.2.0",
     "eslint": "4.19.1",
     "eslint-config-airbnb": "16.1.0",
