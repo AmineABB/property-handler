@@ -1,19 +1,21 @@
 # Object property handler
 
-> A simpler way to manage your property values in an object:
+> A simpler way to manage your object properties values:
 
-**Installation**
+## Installation:
 
 ```js
-npm install --save-dev property-handler
+npm i -D property-handler
 ```
 
-**How to use the module**
+## Usage:
 
-> Import the module property-handler:
+### Import the module property-handler:
+```js
 import propertyHandler from 'property-handler'
+```
 
-> Get object property value:
+### Get object property value:
 ```js
 const data = {
     foo: 'bar',
@@ -31,7 +33,7 @@ const data = {
 propertyHandler.getProp(data, 'foo') // => bar
 ```
 
-> You can use the same implementation for arrays:
+### You can use the same implementation for arrays:
 ```js
 const data = {
     foo: 'bar',
@@ -46,5 +48,5 @@ const data = {
         }
     ]
 }
-propertyHandler.getProp(data, 'barbaz') // => Array of object values
+propertyHandler.getProp(data, 'barbaz') // => [ {id: 0, name: 'baar'}, {id: 1, name: 'fooo'} ]
 ```
