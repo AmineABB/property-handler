@@ -4,6 +4,7 @@
   "description": "Object property handler",
   "main": "dist/index.js",
   "scripts": {
+    "commit": "git-cz",
     "build": "webpack --env.prod -p",
     "build:dev": "webpack --env.dev",
     "test": "cross-env NODE_ENV=test nyc mocha",
@@ -50,9 +51,12 @@
     "webpack-config-utils": "2.3.0"
   },
   "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    },
     "ghooks": {
       "pre-commit": "npm run validate",
-      "commit-mg": "validate-commit-msg"
+      "commit-msg": "validate-commit-msg"
     }
   }
 }
