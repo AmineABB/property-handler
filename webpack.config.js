@@ -1,13 +1,12 @@
-const webpack                     = require('webpack')
+const webpack = require('webpack')
 const { getIfUtils, removeEmpty } = require('webpack-config-utils')
-const { resolve }                 = require('path')
-const CleanWebpackPlugin          = require('clean-webpack-plugin')
-const { CONF }                    = require('./webpack.config/index')
+const { resolve } = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CONF } = require('./webpack.config/index')
 
 module.exports = env => {
-
 	// ENV: dev or prod
-	const { ifProd, ifNotProd } = getIfUtils(env)
+	const { ifProd } = getIfUtils(env)
 
 	const config = {
 		entry: resolve(__dirname, CONF.input),
@@ -27,9 +26,7 @@ module.exports = env => {
 				{
 					enforce: 'pre',
 					test: /\.js$/,
-					include: [
-						resolve(__dirname, CONF.input)
-					],
+					include: [resolve(__dirname, CONF.input)],
 					loader: 'eslint-loader'
 				},
 				{
@@ -49,4 +46,4 @@ module.exports = env => {
 		])
 	}
 	return config
-};
+}
